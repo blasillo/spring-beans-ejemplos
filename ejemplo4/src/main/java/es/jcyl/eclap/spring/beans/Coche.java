@@ -1,16 +1,18 @@
 package es.jcyl.eclap.spring.beans;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Coche {
 
     private String nombre;
-    //@Autowired
+    @Autowired
     private Motor motor;
 
 
+    //@Autowired
     public Coche(Motor motor) {
         this.motor = motor;
         IO.println("Iniciando Coche bean");
