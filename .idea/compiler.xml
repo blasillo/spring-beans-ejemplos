@@ -9,6 +9,7 @@
         <module name="ejemplo1" />
         <module name="ejemplo3" />
         <module name="ejemplo2" />
+        <module name="ejemplo5" />
         <module name="ejemplo4" />
       </profile>
     </annotationProcessing>
