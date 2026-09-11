@@ -1,4 +1,4 @@
-package es.jcyl.eclap.spring.beans;
+package es.jcyl.eclap.spring.beans.beans;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Lazy;
