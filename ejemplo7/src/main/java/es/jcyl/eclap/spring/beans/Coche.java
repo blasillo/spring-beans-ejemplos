@@ -1,9 +1,5 @@
 package es.jcyl.eclap.spring.beans;
 
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 public class Coche {
 
     private String nombre;

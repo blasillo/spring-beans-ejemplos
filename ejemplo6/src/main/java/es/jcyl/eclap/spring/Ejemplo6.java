@@ -1,8 +1,7 @@
 package es.jcyl.eclap.spring;
 
-import es.jcyl.eclap.spring.beans.Bicicleta;
-import es.jcyl.eclap.spring.beans.Coche;
-import es.jcyl.eclap.spring.beans.Motor;
+import es.jcyl.eclap.spring.beans.MiServicio;
+import es.jcyl.eclap.spring.beans.SesionUsuario;
 import es.jcyl.eclap.spring.config.ProyectoConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,22 +12,19 @@ public class Ejemplo6 {
 
         var context = new AnnotationConfigApplicationContext(ProyectoConfig.class);
 
-        if (context.containsBean("motor")) {
-            Motor motor = context.getBean(Motor.class);
-            IO.println("Motor: " + motor.getMotor() );
-        }
-        if (context.containsBean("coche")) {
-            Coche v = context.getBean(Coche.class);
-            IO.println("Coche tipo = " + v.getNombre());
-            IO.println("      motor = " + v .getMotor().getMotor());
-        }
-        if (context.containsBean("bicicleta")) {
-            Bicicleta b = context.getBean(Bicicleta.class);
-            IO.println("Bicicleta tipo  = " + b.getNombre());
+        var srv1 = context.getBean(MiServicio.class);
+        var srv2 = context.getBean(MiServicio.class);
 
-        }
+        IO.println(" ====== SINGLETON ======");
+        IO.println( srv1.hashCode());
+        IO.println( srv2.hashCode());
 
-
-
+        IO.println(" ====== PROTOTIPO  ======");
+        var user1 = context.getBean(SesionUsuario.class);
+        var user2 = context.getBean(SesionUsuario.class);
+        IO.println( user1.hashCode());
+        IO.println( user2.hashCode());
+        IO.println( "Sesión usuario 1 :" + user1.getSesionId());
+        IO.println( "Sesión usuario 2 :" + user2.getSesionId());
     }
 }

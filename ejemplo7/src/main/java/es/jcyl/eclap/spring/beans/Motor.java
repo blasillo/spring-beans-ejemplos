@@ -1,8 +1,5 @@
 package es.jcyl.eclap.spring.beans;
 
-import jakarta.annotation.PostConstruct;
-import org.springframework.stereotype.Component;
-
 
 public class Motor {
     private String motor;
